@@ -25,8 +25,8 @@ public class LibreriaController {
 	
 	
 	
-	  @GetMapping("/autores") public Optional<AutoresEntidad> allAutores(){ 
-		  return  repository.findById(1);
+	  @GetMapping("/autores") public Iterable<AutoresEntidad> allAutores(){ 
+		  return  repository.findAll();
 		  }
 	 
 	 
