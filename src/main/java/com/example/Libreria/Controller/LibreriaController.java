@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Libreria.CrudRepository.LibreriaCrudRepository;
-import com.example.Libreria.Entidades.AutoresEntidad;
+import com.example.Libreria.Entidades.Autor;
 
 @RestController
 @RequestMapping("/api")
@@ -25,24 +25,24 @@ public class LibreriaController {
 	
 	
 	
-	  @GetMapping("/autores") public Iterable<AutoresEntidad> allAutores(){ 
+	  @GetMapping("/autores") public Iterable<Autor> allAutores(){ 
 		  return  repository.findAll();
 		  }
 	 
 	 
 	
 	@GetMapping("/autores/{name}")
-	public List<AutoresEntidad> findByName(@PathVariable("name") String name) {
+	public List<Autor> findByName(@PathVariable("name") String name) {
 		return repository.findByName(name);
 	}
 	
 	@PostMapping("/autores")
-	public AutoresEntidad createPerson(@RequestBody AutoresEntidad autores) {
+	public Autor createPerson(@RequestBody Autor autores) {
 		return repository.save(autores);
 	}
 	
 	@PutMapping("/autores/{id}")
-	public AutoresEntidad updateAutores(@PathVariable int id ,@RequestBody AutoresEntidad autores) {
+	public Autor updateAutores(@PathVariable int id ,@RequestBody Autor autores) {
 		return repository.save(autores);
 	}
 	

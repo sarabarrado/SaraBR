@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired; import
 org.springframework.stereotype.Service;
 
 import com.example.Libreria.CrudRepository.LibreriaCrudRepository;
-import com.example.Libreria.Entidades.AutoresEntidad;
+import com.example.Libreria.Entidades.Autor;
 
 import lombok.Data;
 
@@ -21,8 +21,8 @@ import lombok.Data;
 
 @Autowired private LibreriaCrudRepository autorCRUDRepository;
 
-public List<AutoresEntidad> findAll() {
-	return  (List<AutoresEntidad>) autorCRUDRepository.findAll(); }
+public List<Autor> findAll() {
+	return  (List<Autor>) autorCRUDRepository.findAll(); }
 
 
 

@@ -8,15 +8,15 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.example.Libreria.Entidades.AutoresEntidad;
+import com.example.Libreria.Entidades.Autor;
 
 
 @Repository
-public interface LibreriaCrudRepository extends CrudRepository<AutoresEntidad, Long>{
+public interface LibreriaCrudRepository extends CrudRepository<Autor, Long>{
 	
-	List<AutoresEntidad> findByName(@Param("name") String name);
+	List<Autor> findByName(@Param("name") String name);
 	
- Optional<AutoresEntidad> findById(long id);
+ Optional<Autor> findById(long id);
 	
 }
 
