@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Libreria.CrudRepository.LibreriaCrudRepository;
+import com.example.Libreria.CrudRepository.AutorCrudRepository;
 import com.example.Libreria.Entidades.Autor;
 
 @RestController
 @RequestMapping("/api")
-public class LibreriaController {
+public class AutorController {
 	
 	@Autowired
-	private LibreriaCrudRepository repository;
+	private AutorCrudRepository repository;
 	
 	
 	

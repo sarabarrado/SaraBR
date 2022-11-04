@@ -12,7 +12,7 @@ import com.example.Libreria.Entidades.Autor;
 
 
 @Repository
-public interface LibreriaCrudRepository extends CrudRepository<Autor, Long>{
+public interface AutorCrudRepository extends CrudRepository<Autor, Long>{
 	
 	List<Autor> findByName(@Param("name") String name);
 	
