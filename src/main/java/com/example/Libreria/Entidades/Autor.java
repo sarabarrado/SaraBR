@@ -80,14 +80,14 @@ public class Autor implements Serializable {
 
 	public Libro addLibro(Libro libro) {
 		getLibros().add(libro);
-		libro.setAutore(this);
+		libro.setAutor(this);
 
 		return libro;
 	}
 
 	public Libro removeLibro(Libro libro) {
 		getLibros().remove(libro);
-		libro.setAutore(null);
+		libro.setAutor(null);
 
 		return libro;
 	}

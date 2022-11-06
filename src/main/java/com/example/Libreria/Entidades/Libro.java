@@ -2,8 +2,16 @@
 		package com.example.Libreria.Entidades;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 
 /**
@@ -31,7 +39,7 @@ public class Libro implements Serializable {
 	//bi-directional many-to-one association to Autore
 	@ManyToOne
 	@JoinColumn(name="autor_id")
-	private Autor autore;
+	private Autor autor;
 
 	//bi-directional many-to-one association to Usuario
 	@OneToMany(mappedBy="libro")
@@ -81,11 +89,11 @@ public class Libro implements Serializable {
 	}
 
 	public Autor getAutore() {
-		return this.autore;
+		return this.autor;
 	}
 
-	public void setAutore(Autor autores) {
-		this.autore = autore;
+	public void setAutor(Autor autores) {
+		this.autor = autor;
 	}
 
 	public List<Usuario> getUsuarios() {
