@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Libreria.CrudRepository.AutorCrudRepository;
+import com.example.Libreria.CrudRepository.LibroCrudRepository;
 import com.example.Libreria.Entidades.Autor;
 import com.example.Libreria.Entidades.Libro;
 
@@ -17,11 +18,11 @@ public class LibroController {
 
 	
 	@Autowired
-	private AutorCrudRepository repository;
+	private LibroCrudRepository repository;
 	
 	
 	
-	  @GetMapping("/libros") public Iterable<Autor> allLibros(){ 
+	  @GetMapping("/libros") public Iterable<Libro> allLibros(){ 
 		  return  repository.findAll();
 		  }
 	 
