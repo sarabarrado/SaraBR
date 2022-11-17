@@ -19,38 +19,32 @@ import com.example.Libreria.Entidades.Autor;
 @RestController
 @RequestMapping("/api")
 public class AutorController {
-	
+
 	@Autowired
 	private AutorCrudRepository repository;
-	
-	
-	
-	  @GetMapping("/autores") public Iterable<Autor> allAutores(){ 
-		  return  repository.findAll();
-		  }
-	 
-	 
-	
+
+	@GetMapping("/autores")
+	public Iterable<Autor> allAutores() {
+		return repository.findAll();
+	}
+
 	@GetMapping("/autores/{name}")
 	public List<Autor> findByName(@PathVariable("name") String name) {
 		return repository.findByName(name);
 	}
-	
+
 	@PostMapping("/autores")
 	public Autor createPerson(@RequestBody Autor autores) {
 		return repository.save(autores);
 	}
-	
+
 	@PutMapping("/autores/{id}")
-	public Autor updateAutores(@PathVariable int id ,@RequestBody Autor autores) {
+	public Autor updateAutores(@PathVariable int id, @RequestBody Autor autores) {
 		return repository.save(autores);
 	}
-	
+
 	@DeleteMapping("/autores/{id}")
 	public void deleteAutores(@PathVariable("id") Long id) {
 		repository.deleteById(id);
 	}
 }
-
-
-

@@ -1,74 +1,47 @@
 package com.example.Libreria.Entidades;
 
 import java.io.Serializable;
-import javax.persistence.*;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * The persistent class for the usuarios database table.
  * 
  */
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
-@Table(name="usuarios")
-@NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u")
+@Table(name = "usuarios")
+@NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	private String contraseña;
+	private String password;
 
-	@Column(name="`e-mail`")
-	private String e_mail;
+	@Column(name = "mail")
+	private String mail;
 
 	private String name;
 
-	//bi-directional many-to-one association to Libro
 	@ManyToOne
+	@JoinColumn(name = "libro_id")
 	private Libro libro;
-
-	public Usuario() {
-	}
-
-	public int getId() {
-		return this.id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getContraseña() {
-		return this.contraseña;
-	}
-
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
-	}
-
-	public String getE_mail() {
-		return this.e_mail;
-	}
-
-	public void setE_mail(String e_mail) {
-		this.e_mail = e_mail;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Libro getLibro() {
-		return this.libro;
-	}
-
-	public void setLibro(Libro libro) {
-		this.libro = libro;
-	}
 
 }

@@ -7,21 +7,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Libreria.CrudRepository.UsuarioCrudRepository;
 import com.example.Libreria.Entidades.Usuario;
+import com.example.Libreria.Services.UsuarioServices;
+
+import lombok.Data;
 
 @RestController
+@Data
 @RequestMapping("/api")
 public class UsuarioController {
 
-
-
-	
 	@Autowired
-	private UsuarioCrudRepository usuarioCrudRepository;
-	
-	
-	
-	  @GetMapping("/usuarios") public Iterable<Usuario> allUsuarios(){ 
-		  return  usuarioCrudRepository.findAll();
-		  }
+	private UsuarioServices usuarioServices;
+
+	@GetMapping("/usuarios")
+	public Iterable<Usuario> allUsuarios() {
+		return getUsuarioServices().findAll();
+	}
 
 }
