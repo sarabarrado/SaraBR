@@ -15,31 +15,23 @@ import com.example.Libreria.Entidades.Libro;
 import com.example.Libreria.Services.LibroServices;
 
 import lombok.Data;
+
 @Data
 @RestController
 @RequestMapping("/api")
 public class LibroController {
 
-
-
-	
-	@Autowired
-	private LibroCrudRepository repository;
 	@Autowired
 	private LibroServices libroServices;
-	
-	
-	  @GetMapping("/libros") public Iterable<Libro> allLibros(){ 
-		  return getLibroServices().findAll();
-		  }
-	  
-	  @GetMapping("/libros/{titulo}")
-	  public List<Libro> alltitulos(@PathVariable String titulo){
-		  return getLibroServices().findbyTitulo(titulo);
-	  }
-	  
-	 
-	 
 
+	@GetMapping("/libros")
+	public Iterable<Libro> allLibros() {
+		return getLibroServices().findAll();
+	}
+
+	@GetMapping("/libros/{titulo}")
+	public List<Libro> alltitulos(@PathVariable String titulo) {
+		return getLibroServices().findbyTitulo(titulo);
+	}
 
 }
