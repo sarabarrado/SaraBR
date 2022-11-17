@@ -13,8 +13,10 @@ import com.example.Libreria.Entidades.Libro;
 public interface LibroCrudRepository extends CrudRepository<Libro, Long>{
 	
 	List<Libro> findByTitulo(@Param("titulo") String titulo);
+
+
+	
+	
 	
 	
 }
-
-
