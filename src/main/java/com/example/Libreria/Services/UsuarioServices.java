@@ -23,6 +23,10 @@ import lombok.Data;
 public Iterable<Usuario> findAll() {
 	return  usuarioCrudRepository.findAll(); }
 
+public Usuario grabaUsuario(Usuario usuario) {
+	return getUsuarioCrudRepository().save(usuario);
+}
+
 
 
 }
