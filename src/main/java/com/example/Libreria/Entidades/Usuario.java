@@ -40,8 +40,8 @@ public class Usuario implements Serializable {
 
 	private String name;
 
-	@ManyToOne
+	
 	@JoinColumn(name = "libro_id")
-	private Libro libro;
+	private int libro_id;
 
 }
