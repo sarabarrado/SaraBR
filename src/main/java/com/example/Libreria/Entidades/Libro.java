@@ -28,8 +28,8 @@ public class Libro {
 
 	private int anio;
 
-	@Column(name = "genero_literario")
-	private String generoLiterario;
+	@Column(name = "genero")
+	private String genero;
 
 	private int precio;
 
