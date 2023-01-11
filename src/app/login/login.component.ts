@@ -8,25 +8,27 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username: string = "";
+  user: string = "";
   password: string = "";
-
-  constructor(private authService: AuthenticationService, route: Router) { }
+  errorMessage: string | undefined;
+  constructor(private authService: AuthenticationService, private router: Router) { }
 
   ngOnInit(): void {
   }
   onSubmit() {
-    this.authService.login(this.username, this.password).subscribe(
-      success => {
-        if (success) {
-          // Redirigir al usuario a la página principal
-         // this.router.navigate(['/']);
-        } else {
-          // Mostrar mensaje de error
-         // this.errorMessage = 'Usuario o contraseña incorrectos';
+    this.authService.login(this.user, this.password)
+      .subscribe(
+        success => {
+          if (success) {
+            // redirigir al usuario a la página principal
+          } else {
+            this.errorMessage = 'Usuario o contraseña inválidos';
+          }
+        },
+        error => {
+          this.errorMessage = 'Ocurrió un error al intentar iniciar sesión';
+          console.log(error);
         }
-      }
-    );
+      );
   }
-
 }
