@@ -36,8 +36,9 @@
       id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Features</a>
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="#">Libro</a>
+        <a class="nav-link" href="#">Autores</a>
+        <a class="nav-link" href="#">Usuarios</a>
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
 
       </div>
@@ -79,11 +80,17 @@
     <td mat-cell *matCellDef="let element"> {{element.genero}} </td>
   </ng-container>
 
+  <ng-container matColumnDef="año">
+    <th mat-header-cell *matHeaderCellDef> Año </th>
+    <td mat-cell *matCellDef="let element"> {{element.anio}} </td>
+  </ng-container>
+
  
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+<app-registro-usuario></app-registro-usuario>
 <router-outlet></router-outlet>
 </body>
 </html>

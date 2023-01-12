@@ -9,10 +9,14 @@ import { MatTableModule } from '@angular/material/table';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from "./login/login.component";
+import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
     declarations: [
         AppComponent,
-        LoginComponent
+        LoginComponent,
+        RegistroUsuarioComponent
           ],
     providers: [],
     bootstrap: [AppComponent],
@@ -23,6 +27,8 @@ import { LoginComponent } from "./login/login.component";
         BrowserAnimationsModule,
         FormsModule,
         MatTableModule,
+        MatFormFieldModule,
+        MatSelectModule
         
     ]
 })
