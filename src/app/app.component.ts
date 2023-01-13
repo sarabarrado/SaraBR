@@ -20,6 +20,7 @@ export interface PeriodicElement {
 
 
 export class AppComponent {
+  showFiller = false;
   data: any;
   displayedColumns: string[] = ['titulo', 'precio', 'genero', 'año'];
   

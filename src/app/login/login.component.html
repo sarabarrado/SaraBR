@@ -1,3 +1,4 @@
+<div fxLayout="column" fxLayoutAlign="center center">
 <form (submit)="onSubmit()">
     <label>
       Usuario:
@@ -9,5 +10,6 @@
       <input type="password" [(ngModel)]="password" name="password">
     </label>
     <br>
-    <button type="submit">Iniciar sesión</button>
+     <button mat-raised-button color="primary" type="submit">Iniciar sesión</button>
   </form>
+</div>
