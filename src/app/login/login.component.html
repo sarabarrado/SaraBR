@@ -1,15 +1,26 @@
-<div fxLayout="column" fxLayoutAlign="center center">
-<form (submit)="onSubmit()">
-    <label>
-      Usuario:
-      <input type="text" [(ngModel)]="user" name="user">
-    </label>
-    <br>
-    <label>
-      Contraseña:
-      <input type="password" [(ngModel)]="password" name="password">
-    </label>
-    <br>
-     <button mat-raised-button color="primary" type="submit">Iniciar sesión</button>
-  </form>
-</div>
+<mat-card>
+  <mat-card-content>
+    <div fxLayout="column" fxLayoutAlign="center center">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    
+      <h2>Login</h2>
+      <!-- <mat-error *ngIf="!loginValid">
+        The username and password were not recognized
+      </mat-error> -->
+      <mat-form-field>
+        <input matInput placeholder="Email"  [(ngModel)]="user" name="user" required>
+        <mat-error>
+          Please provide a valid email address
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Contraseña" [(ngModel)]="password" name="password" required>
+        <mat-error>
+          Please provide a valid password
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Iniciar Sesion</button>
+    </form>
+  </div>
+  </mat-card-content>
+</mat-card>
