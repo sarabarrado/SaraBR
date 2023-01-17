@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from "./login/login.component";
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
@@ -19,6 +18,7 @@ import { AutoresComponent } from './components/autores/autores.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
     declarations: [
@@ -27,7 +27,8 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
         RegistroUsuarioComponent,
         LibrosComponent,
         AutoresComponent,
-        UsuariosComponent
+        UsuariosComponent,
+        
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -43,7 +44,8 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
         MatButtonModule,
         MatSidenavModule,
         MatInputModule,
-        MatIconModule
+        MatIconModule,
+        MatCardModule
 
     ]
 })
