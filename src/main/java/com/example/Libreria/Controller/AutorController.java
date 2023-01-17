@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,27 +23,27 @@ public class AutorController {
 
 	@Autowired
 	private AutorCrudRepository repository;
-
+	@CrossOrigin(origins = "*")
 	@GetMapping("/autores")
 	public Iterable<Autor> allAutores() {
 		return repository.findAll();
 	}
-
+	@CrossOrigin(origins = "*")
 	@GetMapping("/autores/{name}")
 	public List<Autor> findByName(@PathVariable("name") String name) {
 		return repository.findByName(name);
 	}
-
+	@CrossOrigin(origins = "*")
 	@PostMapping("/autores")
 	public Autor createPerson(@RequestBody Autor autores) {
 		return repository.save(autores);
 	}
-
+	@CrossOrigin(origins = "*")
 	@PutMapping("/autores/{id}")
 	public Autor updateAutores(@PathVariable int id, @RequestBody Autor autores) {
 		return repository.save(autores);
 	}
-
+	@CrossOrigin(origins = "*")
 	@DeleteMapping("/autores/{id}")
 	public void deleteAutores(@PathVariable("id") Long id) {
 		repository.deleteById(id);
