@@ -14,6 +14,7 @@ export class UsuariosComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getUsuarios();
   }
   public listaUsuarios: Usuarios[] = []; 
   public dataSourceUsuarios = new MatTableDataSource();

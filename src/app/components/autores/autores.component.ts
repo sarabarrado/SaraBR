@@ -14,6 +14,7 @@ export class AutoresComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getAutores();
   }
   public listaAutores: Autores[] = []; 
   public dataSourceAutores = new MatTableDataSource();

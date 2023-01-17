@@ -14,6 +14,7 @@ export class LibrosComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.makeApiRequest();
   }
   public listaLibros: Libros[] = []; 
   public dataSourceLibros = new MatTableDataSource();
