@@ -21,7 +21,7 @@ export interface PeriodicElement {
 
 export class AppComponent {
   data: any;
-  displayedColumns: string[] = ['titulo', 'precio', 'genero'];
+  displayedColumns: string[] = ['titulo', 'precio', 'genero', 'año'];
   
   
   constructor(private http: HttpClient) {}
