@@ -8,8 +8,8 @@ import { RegistroUsuarioComponent } from './components/registro-usuario/registro
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { LoginComponent } from './login/login.component';
 
-const routes: Routes = [ 
-{ path: '', component: AppComponent },
+const routes: Routes = [
+{ path: '', component: LoginComponent },
 { path: 'home', component: HomeComponent },
 { path: 'libros', component: LibrosComponent },
 { path: 'login', component: LoginComponent },
