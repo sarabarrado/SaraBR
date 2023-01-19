@@ -18,12 +18,9 @@ import { AutoresComponent } from './components/autores/autores.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
-import {MatCardModule} from '@angular/material/card';
-import { HomeComponent } from './components/home/home.component';
-
-import {MatToolbarModule} from '@angular/material/toolbar';
-
-import {MatListModule} from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
     declarations: [
@@ -33,7 +30,6 @@ import {MatListModule} from '@angular/material/list';
         LibrosComponent,
         AutoresComponent,
         UsuariosComponent,
-        HomeComponent,
 
     ],
     providers: [],
@@ -53,8 +49,8 @@ import {MatListModule} from '@angular/material/list';
         MatIconModule,
         MatCardModule,
         MatToolbarModule,
-    MatButtonModule,
-    MatListModule
+        MatButtonModule,
+        MatListModule
 
 
     ]
