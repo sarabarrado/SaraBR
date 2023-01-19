@@ -2,3 +2,55 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
+*{
+    font-family: 'Lato', sans-serif;
+}
+html, body { height: 100%; }
+body { margin: 0;background: #F0F3F5;}
+h1{
+    margin: 0;
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+}
+.mat-list-base{
+    display: flex !important;
+    padding-top: 0px !important;
+    position: absolute;
+    right: 0;
+
+}
+.mat-button{
+    font-size:16px;
+        line-height: 58px !important;
+}
+.mat-toolbar{
+    background-color: #07d4f8 !important;
+}
+.mat-list-base .mat-list-item{
+    color: #fff !important;
+}
+.content-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media(max-width:600px){
+    .mat-list-base .mat-list-item .mat-list-item-content{
+        padding: 0 !important;
+    }
+    .mat-list-base{
+        right: initial;
+        width:100% !important;
+
+    }
+    .mat-toolbar-single-row{
+    padding: 0 !important;
+    }
+    .mat-button{
+    font-size: 18px !important;
+    }
+}

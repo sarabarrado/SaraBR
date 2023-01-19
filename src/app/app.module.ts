@@ -21,6 +21,10 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import {MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './components/home/home.component';
 
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+import {MatListModule} from '@angular/material/list';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -30,7 +34,7 @@ import { HomeComponent } from './components/home/home.component';
         AutoresComponent,
         UsuariosComponent,
         HomeComponent,
-        
+
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -47,7 +51,11 @@ import { HomeComponent } from './components/home/home.component';
         MatSidenavModule,
         MatInputModule,
         MatIconModule,
-        MatCardModule
+        MatCardModule,
+        MatToolbarModule,
+    MatButtonModule,
+    MatListModule
+
 
     ]
 })
