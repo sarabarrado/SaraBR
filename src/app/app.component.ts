@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import { MatTableDataSource } from '@angular/material/table';
 import { Libros } from 'src/models/libros';
+import { AuthenticationService } from './authentication.service';
+import { Router } from '@angular/router';
 
 export interface PeriodicElement {
   name: string;
@@ -20,47 +22,29 @@ export interface PeriodicElement {
 
 
 export class AppComponent {
-  showFiller = false;
-  data: any;
-  displayedColumns: string[] = ['titulo', 'precio', 'genero', 'año'];
-  
-  
-  constructor(private http: HttpClient) {}
-  ngOnInit() {
-    //this.makeApiResponse();
-   this.makeApiRequest();
+  user: string = "";
+  password: string = "";
+  errorMessage: string | undefined;
+  constructor(private authService: AuthenticationService, private router: Router) { }
+
+  ngOnInit(): void {
   }
-
-  public listaLibros: Libros[] = []; 
-  public dataSourceLibros = new MatTableDataSource();
-  makeApiRequest() {
-    this.http.get<any[]>('http://localhost:8082/api/libros').subscribe(
-      response => {
-        this.dataSourceLibros.data = response;
-        console.log("lo que devuelve de usuarios: " + this.dataSourceLibros.data);
-        
-        // procesar la respuesta de la API
-      },
-    );
-}
-
-
-makeApiResponse(){
-  const registro={
-    name: 'Luis',
-    mail:'luis@gmail.com',
-    password:'12345',
-    libro_id:7
-
+  onSubmit() {
+    this.authService.login(this.user, this.password)
+      .subscribe(
+        success => {
+          if (success) {
+            // redirigir al usuario a la página principal
+          } else {
+            this.errorMessage = 'Usuario o contraseña inválidos';
+          }
+        },
+        error => {
+          this.errorMessage = 'Ocurrió un error al intentar iniciar sesión';
+          console.log(error);
+        }
+      );
   }
-  this.http.post('http://localhost:8082/api/usuarios',registro).subscribe(
-    (response) =>{
-     this.data = response;
-     console.log("usuario nuevo" + response);
-    }
-  )
-
-}
 }
 
 
