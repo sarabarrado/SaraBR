@@ -94,13 +94,13 @@ html {
   }
 
   .login-box a:hover {
-    background: #03e9f4;
+    background: #03c7d1;
     color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 5px #03e9f4,
-                0 0 25px #03e9f4,
-                0 0 50px #03e9f4,
-                0 0 100px #03e9f4;
+    box-shadow: 0 0 5px #03c7d1,
+                0 0 15px #03c7d1,
+                0 0 10px #03c7d1,
+                0 0 50px #03c7d1;
   }
 
   .login-box a span {
