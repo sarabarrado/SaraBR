@@ -19,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import {MatCardModule} from '@angular/material/card';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import {MatCardModule} from '@angular/material/card';
         LibrosComponent,
         AutoresComponent,
         UsuariosComponent,
+        HomeComponent,
         
     ],
     providers: [],
