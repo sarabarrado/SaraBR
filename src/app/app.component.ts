@@ -22,13 +22,28 @@ export interface PeriodicElement {
 
 
 export class AppComponent {
+  data: any;
+  displayedColumns: string[] = ['titulo', 'precio', 'genero', 'año'];
   user: string = "";
   password: string = "";
   errorMessage: string | undefined;
-  constructor(private authService: AuthenticationService, private router: Router) { }
+  constructor(private authService: AuthenticationService, private router: Router,private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.makeApiRequest();
   }
+  public listaLibros: Libros[] = []; 
+  public dataSourceLibros = new MatTableDataSource();
+  makeApiRequest() {
+    this.http.get<any[]>('http://localhost:8082/api/libros').subscribe(
+      response => {
+        this.dataSourceLibros.data = response;
+        console.log("lo que devuelve de usuarios: " + this.dataSourceLibros.data);
+        
+        // procesar la respuesta de la API
+      },
+    );
+}
   onSubmit() {
     this.authService.login(this.user, this.password)
       .subscribe(
