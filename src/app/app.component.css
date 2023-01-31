@@ -182,13 +182,10 @@ html {
       bottom: 100%;
     }
   } */
-@import url('https://fonts.googleapis.com/css2?family=Poppins');
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  .toolbar-item-spacer {
+    flex: 1 1 auto;
 }
+
 
 a{
     text-decoration: none;
@@ -605,3 +602,4 @@ input.submitbutton.ripplelink {
   align-items: center;
   justify-content: center;
 }
+
