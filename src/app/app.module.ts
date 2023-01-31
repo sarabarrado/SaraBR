@@ -21,6 +21,10 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { RouterModule, Routes }   from '@angular/router';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
     declarations: [
@@ -50,9 +54,11 @@ import { MatListModule } from '@angular/material/list';
         MatCardModule,
         MatToolbarModule,
         MatButtonModule,
-        MatListModule
-
-
+        MatListModule,
+        MatMenuModule,
+        RouterModule,
+        MatExpansionModule,
+        MatTooltipModule
     ]
 })
 export class AppModule { }
