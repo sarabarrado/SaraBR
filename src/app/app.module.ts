@@ -25,6 +25,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule, Routes }   from '@angular/router';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -58,7 +59,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         MatMenuModule,
         RouterModule,
         MatExpansionModule,
-        MatTooltipModule
+        MatTooltipModule,
+        ReactiveFormsModule
     ]
 })
 export class AppModule { }
