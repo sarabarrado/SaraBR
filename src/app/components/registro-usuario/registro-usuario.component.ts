@@ -21,8 +21,8 @@ export class RegistroUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = new FormGroup({
-      username: new FormControl(''),
-      email: new FormControl(''),
+      name: new FormControl(''),
+      mail: new FormControl(''),
       password: new FormControl('')
     });
   }
@@ -30,8 +30,8 @@ export class RegistroUsuarioComponent implements OnInit {
   register() {
     if (this.user.valid) {
       const user = {
-        username: this.user.value.username,
-        email: this.user.value.email,
+        name: this.user.value.name,
+        mail: this.user.value.mail,
         password: this.user.value.password
       };
       console.log(user);
